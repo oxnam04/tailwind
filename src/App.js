@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./Header";
+import Hero from "./hero";
+import Card from "./card";
+import Complete from "./complete";
+import Person from "./Person";
+import Footer from "./footer";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [dark,setDark] = useState(false)
+    return (
+        <div style={{
+            background: dark ? "red" : "darkblue"
+        }} className="App">
+            <Header dark={dark} setDark={setDark}/>
+            <Hero />
+            <Card />
+            <Complete/>
+            <Person />
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
